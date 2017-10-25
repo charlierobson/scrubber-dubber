@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8395,15 +8395,15 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="C6" library="rcl" deviceset="C-EU" device="025-025X050" value="100pf silver mica"/>
 <part name="D2" library="diode" deviceset="1N4148" device="DO35-7"/>
 <part name="LED1" library="led" deviceset="LED" device="5MM" value="nice red one"/>
-<part name="P1-S" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
+<part name="INPUT" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
 <part name="P1-G" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
-<part name="P2-S" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
+<part name="OUTPUT" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
 <part name="P2-G" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
-<part name="P3-S" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
+<part name="SLAVE" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
 <part name="P3-G" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
-<part name="BATT+" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
+<part name="+" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
 <part name="GND" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
-<part name="BATT-" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
+<part name="-" library="testpad" deviceset="TPSQ" device="PAD1-13Y"/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
@@ -8440,33 +8440,30 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="C6" gate="G$1" x="134.62" y="48.26" rot="R90"/>
 <instance part="D2" gate="G$1" x="116.84" y="35.56" rot="R90"/>
 <instance part="LED1" gate="G$1" x="86.36" y="38.1"/>
-<instance part="P1-S" gate="G$1" x="10.16" y="81.28" smashed="yes" rot="R270">
+<instance part="INPUT" gate="G$1" x="10.16" y="81.28" smashed="yes" rot="R270">
 <attribute name="NAME" x="5.08" y="81.28" size="1.778" layer="95" rot="R180" align="center-left"/>
 <attribute name="TP_SIGNAL_NAME" x="8.89" y="78.74" size="1.778" layer="97" rot="R270"/>
 </instance>
 <instance part="P1-G" gate="G$1" x="10.16" y="76.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="5.08" y="76.2" size="1.778" layer="95" rot="R180" align="center-left"/>
 <attribute name="TP_SIGNAL_NAME" x="8.89" y="73.66" size="1.778" layer="97" rot="R270"/>
 </instance>
-<instance part="P2-S" gate="G$1" x="147.32" y="68.58" smashed="yes" rot="R90">
+<instance part="OUTPUT" gate="G$1" x="147.32" y="68.58" smashed="yes" rot="R90">
 <attribute name="NAME" x="152.4" y="68.58" size="1.778" layer="95" align="center-left"/>
 <attribute name="TP_SIGNAL_NAME" x="148.59" y="71.12" size="1.778" layer="97" rot="R90"/>
 </instance>
 <instance part="P2-G" gate="G$1" x="147.32" y="63.5" smashed="yes" rot="R90">
-<attribute name="NAME" x="152.4" y="63.5" size="1.778" layer="95" align="center-left"/>
 <attribute name="TP_SIGNAL_NAME" x="148.59" y="66.04" size="1.778" layer="97" rot="R90"/>
 </instance>
-<instance part="P3-S" gate="G$1" x="147.32" y="48.26" smashed="yes" rot="R90">
+<instance part="SLAVE" gate="G$1" x="147.32" y="48.26" smashed="yes" rot="R90">
 <attribute name="NAME" x="152.4" y="48.26" size="1.778" layer="95" align="center-left"/>
 <attribute name="TP_SIGNAL_NAME" x="148.59" y="50.8" size="1.778" layer="97" rot="R90"/>
 </instance>
 <instance part="P3-G" gate="G$1" x="147.32" y="43.18" smashed="yes" rot="R90">
-<attribute name="NAME" x="152.4" y="43.18" size="1.778" layer="95" align="center-left"/>
 <attribute name="TP_SIGNAL_NAME" x="148.59" y="45.72" size="1.778" layer="97" rot="R90"/>
 </instance>
-<instance part="BATT+" gate="G$1" x="12.7" y="17.78" rot="R270"/>
+<instance part="+" gate="G$1" x="12.7" y="17.78" rot="R270"/>
 <instance part="GND" gate="G$1" x="12.7" y="25.4" rot="R270"/>
-<instance part="BATT-" gate="G$1" x="12.7" y="7.62" rot="R270"/>
+<instance part="-" gate="G$1" x="12.7" y="7.62" rot="R270"/>
 <instance part="SUPPLY1" gate="GND" x="12.7" y="68.58"/>
 <instance part="SUPPLY2" gate="GND" x="144.78" y="58.42"/>
 <instance part="SUPPLY3" gate="GND" x="144.78" y="30.48"/>
@@ -8569,14 +8566,14 @@ In this library the device names are the same as the pin names of the symbols, t
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="BATT+" gate="G$1" pin="TP"/>
+<pinref part="+" gate="G$1" pin="TP"/>
 <wire x1="15.24" y1="17.78" x2="30.48" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="S1" gate="BEF1" pin="O"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="BATT-" gate="G$1" pin="TP"/>
+<pinref part="-" gate="G$1" pin="TP"/>
 <wire x1="15.24" y1="7.62" x2="30.48" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="S1" gate="BEF1" pin="O1"/>
 </segment>
@@ -8662,7 +8659,7 @@ In this library the device names are the same as the pin names of the symbols, t
 </net>
 <net name="N$14" class="0">
 <segment>
-<pinref part="P2-S" gate="G$1" pin="TP"/>
+<pinref part="OUTPUT" gate="G$1" pin="TP"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="144.78" y1="68.58" x2="139.7" y2="68.58" width="0.1524" layer="91"/>
 </segment>
@@ -8679,7 +8676,7 @@ In this library the device names are the same as the pin names of the symbols, t
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="P1-S" gate="G$1" pin="TP"/>
+<pinref part="INPUT" gate="G$1" pin="TP"/>
 <wire x1="12.7" y1="81.28" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="81.28" x2="22.86" y2="81.28" width="0.1524" layer="91"/>
@@ -8715,7 +8712,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="R11" gate="G$1" pin="2"/>
 <pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="139.7" y1="45.72" x2="139.7" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="P3-S" gate="G$1" pin="TP"/>
+<pinref part="SLAVE" gate="G$1" pin="TP"/>
 <wire x1="139.7" y1="48.26" x2="144.78" y2="48.26" width="0.1524" layer="91"/>
 <junction x="139.7" y="48.26"/>
 </segment>
